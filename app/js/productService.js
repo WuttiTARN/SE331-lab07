@@ -2,12 +2,13 @@
 var productService = angular.module('productServices',['ngResource']);
 
 productService.factory('productService',function($resource){
-    return $resource('/product/:id', { id: '@_id' }, {
+    return $resource('http://localhost:8080/product/:id', { id: '@_id' }, {
         update: {
             method: 'PUT' // this method issues a PUT request
         }});
 
 })
+
 
 productService.service('totalCalService',function() {
     this.getTotalNetPrice = function (products) {

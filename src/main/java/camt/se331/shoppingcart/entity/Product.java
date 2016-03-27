@@ -3,20 +3,20 @@ package camt.se331.shoppingcart.entity;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.List;
 
 /**
  * Created by Dto on 2/7/2015.
  */
 @Entity
 public class Product implements Comparable{
-@Id
+        @Id
         @GeneratedValue
 
     Long id;
     String name;
     String description;
     Double totalPrice;
-
 
     public Long getId() {
         return id;

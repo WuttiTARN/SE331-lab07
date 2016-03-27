@@ -1,19 +1,21 @@
 package camt.se331.shoppingcart.dao;
 
 import camt.se331.shoppingcart.entity.Product;
+import camt.se331.shoppingcart.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import repository.ProductRepository;
 
 import java.util.List;
 
 /**
- * Created by TOP on 25/3/2559.
+ * Created by wuttiTARN on 3/27/2016 AD.
  */
 @Repository
 public class DbProductDao implements ProductDao {
+
     @Autowired
-    ProductRepository productRepository;
+    ProductRepository productRepository ;
+
     @Override
     public List<Product> getProducts() {
         return productRepository.findAll();
