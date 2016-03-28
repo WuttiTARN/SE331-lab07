@@ -43,9 +43,7 @@ public class ProductController {
         return productService.deleteProduct(id);
     }
 
-    @RequestMapping(value = "getProduct", method = RequestMethod.GET)
-    public List <Product> getListByName (@RequestParam ("name") String name){
-        return productService.getProductsByNameOrDescription(name,name);
-    }
-
+    @RequestMapping(value = "getProduct",method = RequestMethod.GET)
+    public  List<Product> getListByName(@RequestParam("name")String name){
+        return productService.getProductsByName(name);}
 }

@@ -8,11 +8,8 @@ import org.springframework.stereotype.Repository;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by TOP on 28/3/2559.
- */
 @Repository
-public class ShoppingCartDaoImpl implements ShoppingCartDao{
+public class ShoppingCartDaoImpl implements ShoppingCartDao {
     @Autowired
     ShoppingCartRepository shoppingCartRepository;
 
@@ -22,17 +19,17 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao{
     }
 
     @Override
-    public List<ShoppingCart>getShoppingCarts() {
+    public List<ShoppingCart> getShoppingCarts() {
         return null;
     }
 
     @Override
-    public List<ShoppingCart>getShoppingCartBefore(Date stateDate) {
+    public List<ShoppingCart> getShoppingCartBefore(Date stateDate) {
         return null;
     }
 
     @Override
-    public List<ShoppingCart>getShoppingCartBetween(Date stateDate, Date stopDate) {
+    public List<ShoppingCart> getShoppingCartBetween(Date stateDate, Date stopDate) {
         return null;
     }
 
@@ -45,5 +42,5 @@ public class ShoppingCartDaoImpl implements ShoppingCartDao{
     public ShoppingCart deleteShoppingCart(ShoppingCart shoppingCart) {
         return null;
     }
-
 }
+

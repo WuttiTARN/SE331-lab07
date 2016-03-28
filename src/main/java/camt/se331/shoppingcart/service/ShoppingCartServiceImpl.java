@@ -9,9 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by TOP on 28/3/2559.
- */
+
 @Service
 public class ShoppingCartServiceImpl implements ShoppingCartService {
     @Autowired
@@ -24,12 +22,12 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     }
 
     @Override
-    public List<ShoppingCart>getShoppingCarts() {
+    public List<ShoppingCart> getShoppingCarts() {
         return null;
     }
 
     @Override
-    public List<ShoppingCart>getShoppingCartBetween(Date stateDate, Date stopDate) {
+    public List<ShoppingCart> getShoppingCartBetween(Date stateDate, Date stopDate) {
         return null;
     }
 
@@ -42,5 +40,4 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     public ShoppingCart deleteShoppingCart(ShoppingCart shoppingCart) {
         return null;
     }
-
 }

@@ -6,22 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * Created by TOP on 28/3/2559.
- */
+@CrossOrigin
 @RestController
 @RequestMapping("/shoppingcart")
 public class ShoppingCartController {
     @Autowired
     ShoppingCartService shoppingCartService;
-    @RequestMapping(value="/{id}",method = RequestMethod.GET)
-    public ShoppingCart getShoppingCart(@PathVariable("id") Long id){
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ShoppingCart getShoppingCart(@PathVariable("id") Long id) {
         return shoppingCartService.findById(id);
     }
 
-    @RequestMapping(value="/{id}",method = RequestMethod.PUT)
-    public ShoppingCart updateShoppingCart(@PathVariable("id")Long id, @RequestBody ShoppingCart cart, BindingResult bindingResult){
+    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+    public ShoppingCart updateShoppingCart(@PathVariable("id") Long id, @RequestBody ShoppingCart cart, BindingResult bindingResult) {
         return shoppingCartService.addShoppingCart(cart);
     }
 }
-

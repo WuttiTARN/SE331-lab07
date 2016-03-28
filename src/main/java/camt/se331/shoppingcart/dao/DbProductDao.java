@@ -7,15 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by wuttiTARN on 3/27/2016 AD.
- */
 @Repository
 public class DbProductDao implements ProductDao {
-
     @Autowired
-    ProductRepository productRepository ;
-
+    ProductRepository productRepository;
     @Override
     public List<Product> getProducts() {
         return productRepository.findAll();
@@ -55,11 +50,6 @@ public class DbProductDao implements ProductDao {
 
     @Override
     public List<Product> getProductsByName(String name) {
-        return productRepository.findByNameContaining(name);
-    }
-
-    @Override
-    public List<Product> getProductsByNameOrDescription(String name, String des) {
-        return productRepository.findByNameOrDescriptionContainingIgnoreCase(name, name);
+        return productRepository.findByNameOrDescriptionContainingIgnoreCase(name,name);
     }
 }
