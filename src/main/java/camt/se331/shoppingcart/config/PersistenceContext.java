@@ -36,7 +36,22 @@ import java.util.Properties;
 @EnableTransactionManagement(proxyTargetClass = true)
 @EnableJpaRepositories("camt.se331.shoppingcart.repository")
 @PropertySources(value={@PropertySource("classpath:/hibernate.properties")})
+
 class PersistenceContext {
+
+    private static final String[] ENTITY_PACKAGES = {
+            "camt.se331.shoppingcart.entity"
+    };
+
+    private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
+    private static final String PROPERTY_NAME_HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
+    private static final String PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
+    private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
+    private static final String PROPERTY_NAME_DB_DRIVER_CLASS = "db.driver";
+    private static final String PROPERTY_NAME_DB_PASSWORD = "db.password";
+    private static final String PROPERTY_NAME_DB_URL = "db.url";
+    private static final String PROPERTY_NAME_DB_USER = "db.username";
+
 
     @Bean
     public HibernateExceptionTranslator hibernateExceptionTranslator() {
@@ -66,6 +81,7 @@ class PersistenceContext {
         return boneCPDataSource;
 
     }
+
     @Bean
     @Autowired
     public EntityManagerFactory entityManagerFactory(DataSource dataSource) {
@@ -95,7 +111,6 @@ class PersistenceContext {
         return factory.getObject();
     }
 
-
     @Bean
     @Autowired
     public JpaTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
@@ -106,20 +121,6 @@ class PersistenceContext {
         return txManager;
     }
 
-
-    private static final String[] ENTITY_PACKAGES = {
-            "camt.se331.shoppingcart.entity"
-    };
-
-    private static final String PROPERTY_NAME_HIBERNATE_DIALECT = "hibernate.dialect";
-    private static final String PROPERTY_NAME_HIBERNATE_FORMAT_SQL = "hibernate.format_sql";
-    private static final String PROPERTY_NAME_HIBERNATE_HBM2DDL_AUTO = "hibernate.hbm2ddl.auto";
-    private static final String PROPERTY_NAME_HIBERNATE_SHOW_SQL = "hibernate.show_sql";
-    private static final String PROPERTY_NAME_DB_DRIVER_CLASS = "db.driver";
-    private static final String PROPERTY_NAME_DB_PASSWORD = "db.password";
-    private static final String PROPERTY_NAME_DB_URL = "db.url";
-    private static final String PROPERTY_NAME_DB_USER = "db.username";
-
-
-
 }
+
+

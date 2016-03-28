@@ -14,11 +14,11 @@ import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 import java.util.Locale;
 
+@Import({PersistenceContext.class})
 @EnableWebMvc
 @Configuration 
 @ComponentScan(basePackages = {"camt.se331.shoppingcart"})
 @EnableAspectJAutoProxy
-@Import({PersistenceContext.class})
 
 public class AppConfig extends WebMvcConfigurerAdapter {
     @Override

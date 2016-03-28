@@ -189,7 +189,7 @@
             <artifactId>slf4j-simple</artifactId>
             <version>${slf.version}</version>
         </dependency>
-        
+
 
     </dependencies>
 
